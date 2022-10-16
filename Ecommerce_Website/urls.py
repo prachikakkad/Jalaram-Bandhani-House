@@ -47,4 +47,4 @@ urlpatterns = [
     path('paying-option-selected', views.Payment_Proceed, name="pay_proceed"),
     path('verifying' , views.Verifying, name="verifying"),
     path('shop/', include('shop.urls'))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
