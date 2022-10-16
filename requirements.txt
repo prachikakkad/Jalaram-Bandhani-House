@@ -87,7 +87,6 @@ prometheus-client==0.14.1
 prompt-toolkit==3.0.29
 psutil==5.9.0
 pure-eval==0.2.2
-PyAudio==0.2.12
 PyAutoGUI==0.9.53
 pycparser==2.21
 pygame==2.1.2
