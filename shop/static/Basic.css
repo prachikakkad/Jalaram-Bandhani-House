@@ -1,0 +1,77 @@
+.nav-div-auth-basic {
+    margin-left: 700px;
+}
+
+.nav-div-unauth-basic {
+    margin-left: 850px;
+}
+
+.nav-div-shop-auth {
+    margin-left: 720px;
+}
+
+.nav-div-shop-unauth {
+    margin-left: 660px;
+}
+
+.title {
+    margin-left: 5px;
+    color: rgb(1, 1, 111);
+}
+
+nav ul li {
+    margin: 0 3px;
+}
+
+nav ul li a {
+    background-color: rgba(218, 181, 34, 0.792);
+    border-radius: 8px;
+}
+
+.tracker {
+    margin-right: 35px;
+}
+
+.explore {
+    margin-left: -30px;
+}
+
+.logout {
+    margin-left: 2px;
+}
+
+@media screen and (max-width:1281px) {
+
+    .nav-div-auth-basic,
+    .nav-div-unauth-basic,
+    .nav-div-shop-auth,
+    .nav-div-shop-unauth {
+        margin-left: 10px;
+    }
+
+    .title {
+        margin-left: 10px;
+    }
+
+    .toggler {
+        margin-right: 10px;
+    }
+
+    nav ul li a {
+        width: 50%;
+        margin-left: 10px;
+    }
+
+    .tracker {
+        width: 100%;
+    }
+
+    .explore {
+        margin-left: 3px;
+    }
+
+    .logout {
+        margin-left: 0px;
+    }
+
+}

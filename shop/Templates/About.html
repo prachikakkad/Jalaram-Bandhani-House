@@ -1,0 +1,57 @@
+{% extends 'Basic.html' %}
+{% block css %}
+{% load static %}
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{% static 'Basic.css' %}">
+<link rel="stylesheet" href="{% static 'About.css' %}">
+
+<!-- Font Awesome Icon -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{% endblock css %}
+{% block body %}
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="content-section">
+                <div class="title">
+                   <b><p class="para">About Me</p></b>
+                </div>
+                <div class="content">
+                    <h2>I am Meena Thakkar , A Business Women</h2>
+                    <p>I run my business through Kolhapur. You can order the items you like from this website and I will dispatch the order from here only. You can contact me through the contact page available on this website.</p>
+                </div>
+                <div class="wrapper">
+                    <div class="icon facebook">
+                        <div class="tooltip">Facebook</div>
+                        <a href="https://www.facebook.com/meena.thakkar.7161" target="_blank"><span><i
+                                    class="fa fa-facebook"></i></span></a>
+                    </div>
+                    <!-- <div class="icon instagram">
+                        <div class="tooltip">Instagram</div>
+                        <a href="#" target="_blank"><span><i class="fa fa-instagram"></i></span></a>
+                    </div>
+                    <div class="icon whatsapp">
+                        <div class="tooltip">Whatsapp</div>
+                        <a href="#" target="_blank"><span><i class="fa fa-whatsapp"></i></span></a>
+                    </div> -->
+                    <div class="icon youtube">
+                        <div class="tooltip">YouTube</div>
+                        <a href="https://www.youtube.com/channel/UCUS4blQEZP9MxEusMYXHsRw/featured"
+                            target="_blank"><span><i class="fa fa-youtube-play"></i></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="https://i.ibb.co/L8KMsNH/Whats-App-Image-2022-05-26-at-9-16-41-PM.jpg">
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock body %}

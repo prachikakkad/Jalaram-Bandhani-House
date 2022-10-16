@@ -1,0 +1,108 @@
+.h22 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 14px;
+}
+
+.h2 {
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.button {
+    width: 66%;
+    margin-left: 50px;
+}
+
+ol {
+    width: 80%;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -50px;
+}
+
+.list {
+    margin-left: 600px;
+}
+
+.email {
+    width: 330px;
+}
+
+.list-group {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.list-group-item {
+    margin-left: -30px;
+}
+
+@media (max-width:1281px) {
+    * {
+        overflow-y: visible;
+    }
+
+    .h2 {
+        font-size: 23px;
+        margin-top: 470px;
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+
+    .h22 {
+        font-size: 23px;
+        margin-top: 14px;
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+
+    .list-group {
+        margin-bottom: 14px;
+    }
+
+    .form-label {
+        margin-left: 15%;
+    }
+
+    .form-control {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .button {
+        margin-top: 14px;
+        margin-bottom: 28px;
+        width: 80%;
+        margin-left: 2px;
+    }
+
+    .list {
+        margin-left: 0px;
+    }
+
+    .list-item {
+        margin-left: 0px;
+    }
+
+    .list-group-item {
+        margin-left: 0px;
+    }
+
+    .col{
+        margin-top: -450px;
+    }
+}

@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    margin-top: 100px;
+}
+
+section .imgBx {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    margin-top: -100px;
+}
+
+section .imgBx::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg, #e91e63, #03a9f4);
+    z-index: 1;
+    mix-blend-mode: screen;
+    margin-top: 30px;
+}
+
+section .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 30px;
+}
+
+section .contentBx {
+    display: flex;
+    width: 50%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+}
+
+section .contentBx .formBx {
+    width: 50%;
+    margin-top: -30px;
+}
+
+section .contentBx .formBx .heading2 {
+    color: #607d8b;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #ff4584;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+section .contentBx .formBx .inputBx {
+    margin-bottom: 20px;
+
+}
+
+section .contentBx .formBx .inputBx span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #607d8b;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+section .contentBx .formBx .inputBx input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    border-radius: 30px;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"] {
+    background: #ff4584;
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"]:hover {
+    background: #f53677;
+}
+
+section .contentBx .formBx .inputBx p {
+    color: #607d8b;
+}
+
+section .contentBx .formBx .inputBx p a {
+    color: #ff4584;
+    margin-left: 10px;
+}
+
+@media (max-width:1281px) {
+    section {
+        margin-top: 370px;
+        height: 60vh;
+    }
+    section .contentBx .formBx {
+        width: 80%;
+    }
+    section .contentBx {
+        margin-top: -200px;
+    }
+    section .contentBx .formBx .acc p {
+        text-align: center;
+    }
+    img {
+        display: none;
+    }
+
+    .imgBx {
+        display: none;
+    }
+
+    section .contentBx {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        justify-content: center;
+        align-items: center;
+        margin-top: -150px;
+    }
+
+    section .contentBx .formBx .inputBx input {
+        width: 100%;
+    }
+
+}
