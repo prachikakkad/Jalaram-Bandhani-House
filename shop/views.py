@@ -201,7 +201,7 @@ def New_Order():
     message = "New Order Has Been Placed !"
     s = smtplib.SMTP('smtp.gmail.com', 587)
     s.starttls()
-    s.login("jalarambandhanihouse@gmail.com", "kmztdeipmhodtitz")
+    s.login("jalarambandhanihouse@gmail.com", "pzcfghwqwdpdwqvl")
     s.sendmail("", "thakkarmeena917@gmail.com", message)
     
 def Verify(request):
