@@ -115,7 +115,7 @@
             popstr = popstr + document.getElementById('name' + item).innerHTML + ' : ' + '<b>' + "Qty : " + '</b>' + cart[item][0] + '<br>';
             i = i + 1;
         }
-        popstr = popstr + "</div> <a href='/shop/checkout'><button class='btn btn-primary checkout' id ='checkout'>Checkout</button></a> <button class='btn btn-primary clearcart' onclick='clearCart()' id ='clearCart'>Clear Cart</button>"
+        popstr = popstr + "</div> <a href='/shop/checkout'><button class='btn btn-primary checkout' id ='checkout'>Place Order</button></a> <button class='btn btn-primary clearcart' onclick='clearCart()' id ='clearCart'>Clear Cart</button>"
         document.getElementById('popcart').setAttribute('data-content', popstr);
         $('#popcart').popover('show')
 
