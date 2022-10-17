@@ -93,10 +93,6 @@ def Log_Out(request):
     messages.success(request, "Logged Out Successfully !")
     return redirect('signup')
 
-def Profile(request):
-    """Shows Profile Page To The User."""
-    return render(request, "Profile.html")
-
 def Shop_Home(request):
     """Shows Shopping Page To The User."""
     allProds=[]
@@ -179,37 +175,12 @@ def review(request):
         data.save()
         return redirect(f'/shop/product-{prod_id}')
 
-def Get_OTP(request):
-    """Sends OTP To The User's Email Address."""
-    digits="0123456789"
-    global list_digits
-    list_digits = []
-    global otp_response
-    otp_response = list_digits
-    OTP = ""
-    for i in range(5):
-        OTP += digits[math.floor(random.random()*10)]
-    for x in OTP:
-        list_digits.append(x)
-        print(list_digits)
-    global msg 
-    msg = OTP + " is your OTP for verifying your account for Jalaram Bandhani House."
-    s = smtplib.SMTP('smtp.gmail.com', 587)
-    s.starttls()
-    s.login("jalarambandhanihouse@gmail.com", "pzcfghwqwdpdwqvl")
-    emailid = request.user.email
-    s.sendmail("", emailid, msg)
-
 def New_Order():
     message = "New Order Has Been Placed !"
     s = smtplib.SMTP('smtp.gmail.com', 587)
     s.starttls()
     s.login("jalarambandhanihouse@gmail.com", "pzcfghwqwdpdwqvl")
     s.sendmail("", "thakkarmeena917@gmail.com", message)
-    
-def Verify(request):
-    Get_OTP(request)
-    return render(request, "OTP_Verification.html")
 
 def Place_Order():
     """Places The Order Successfully."""
@@ -273,10 +244,35 @@ def Payment_Proceed(request):
         global string
         if value == "advance":
             string = "Pay In Advance"
-            return redirect('/verify')
         elif value == "half":
             string = "Half In Advance and Half On Delivery"
-            return redirect('/verify')
+            
+        sender = "jalarambandhanihouse@gmail.com"
+        emailid = request.user.email
+            
+        new_msg = EmailMessage()
+        new_msg['Subject'] = "Payment Info"
+        new_msg['From'] = sender
+        new_msg['To'] = emailid
+        msg = f"Option Chosen For Payment : {string}\nTotal Amount To Be Paid : {amount}\nPay According To The Payment Option Selected !\n If You have selected Pay In Advance, Pay The Amount : {amount}\n If You have selected Half in Advance And Half On Delivery, Pay The Amount : {amount/2}\n In Case Of Any Error or Mistake In The Amount Paid By You , The Owner Will Contact You !"
+        new_msg.set_content(msg)
+
+        with open('shop/qr_code.jpeg', 'rb') as f:
+            image_data = f.read()
+            image_type = imghdr.what(f.name)
+            image_name = f.name
+
+            s = smtplib.SMTP('smtp.gmail.com', 587)
+            s.starttls()
+            s.login(sender, "pzcfghwqwdpdwqvl")
+
+            new_msg.add_attachment(image_data, maintype='image', subtype=image_type, filename=image_name)
+
+            s.send_message(new_msg)
+            New_Order()
+            Place_Order()
+            return render(request , "Thank_You.html" , {'thank': thank, 'id': id, 'value' : string})
+            
     return HttpResponse('404 - Not Found')
 
 
