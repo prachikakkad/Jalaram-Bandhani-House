@@ -254,8 +254,8 @@ def Payment_Proceed(request):
         global string
         if value == "advance":
             string = "Pay In Advance"
-        elif value == "half":
-            string = "Half In Advance and Half On Delivery"
+        elif value == "delivery":
+            string = "Cash On Delivery"
             
         sender = "jalarambandhanihouse@gmail.com"
         emailid = request.user.email
