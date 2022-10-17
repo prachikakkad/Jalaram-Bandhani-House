@@ -237,7 +237,7 @@ def Place_Order():
     global thank
     thank = True
 
-    global items, email, fname, lname, username, address_1, address_2, state, city, zip_code, phone, items_json, amount
+    # global items, email, fname, lname, username, address_1, address_2, state, city, zip_code, phone, items_json, amount
 
     place_order = Order(Items=items, Email=email, First_name=fname, Last_name=lname, Username=username, Address_1=address_1, Address_2=address_2, State=state, City=city, Zip_Code=zip_code, Phone=phone, Json=items_json, Amount=amount)
     place_order.save()
