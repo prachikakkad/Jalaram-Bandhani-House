@@ -279,3 +279,6 @@ def Thank_You(request):
     """Shows Thank You Page With Order Id To The User."""
     return render(request, "Thank_You.html", {'id' : id, 'value': string})
 
+def Testimonials(request):
+    return render(request, "Testimonials.html")
+
