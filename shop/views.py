@@ -289,7 +289,7 @@ def Verifying(request):
         if txt1 == list_digits[0] and txt2 == list_digits[1] and txt3 == list_digits[2] and txt4 == list_digits[3] and txt5 == list_digits[4]:
             messages.success(request, "Verification Successful !")
 
-            sender = "prachi412007@gmail.com"
+            sender = "jalarambandhanihouse@gmail.com"
             emailid = request.user.email
             
             new_msg = EmailMessage()
@@ -307,7 +307,7 @@ def Verifying(request):
 
             s = smtplib.SMTP('smtp.gmail.com', 587)
             s.starttls()
-            s.login(sender, "kmztdeipmhodtitz")
+            s.login(sender, "pzcfghwqwdpdwqvl")
 
             new_msg.add_attachment(image_data, maintype='image', subtype=image_type, filename=image_name)
 
