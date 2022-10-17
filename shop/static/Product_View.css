@@ -149,22 +149,23 @@ img {
     }
 
     .btn-container {
-        margin-left: 90px;
+        margin-left: 50px;
+        /* border: #ff4584 solid 3px; */
     }
 
     .name,
     .price,
     .description {
-        margin-left: 120px;
+        margin-left: 20px;
     }
 
     .customer-review {
-        margin-left: 100px;
+        margin-left: 30px;
         font-size: 33px;
     }
 
     .product_review {
-        margin-left: 70px;
+        margin-left: 30px;
         width: fit-content;
         display: inline-block;
     }
@@ -173,7 +174,8 @@ img {
         width: fit-content;
         margin-top: 0px;
         margin-bottom: 50px;
-        margin-left: -50px;
+        margin-left: -100px;
+        /* border: #ff4584 solid 3px; */
     }
 
     .wrap {
