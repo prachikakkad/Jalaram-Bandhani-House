@@ -7,9 +7,10 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'Shop_Home.css' %}">
 <link rel="stylesheet" href="{% static 'Basic.css' %}">
+
 <style>
     .cont {
-        margin-left: 500px;
+        margin-left: 200px;
     }
 
     @media (max-width:1281px) {
@@ -19,9 +20,9 @@
     }
 </style>
 {% endblock css %}
+{% block body %}
 
 <body style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
-    {% block body %}
     <div class="bx" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
         <form method="get" action="search" class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2 search" type="search" placeholder="Search" aria-label="Search"
@@ -122,7 +123,6 @@
             name = document.getElementById('name' + idstr).innerHTML;
             price = document.getElementById('price' + idstr).innerHTML;
             cart[idstr] = [qty, name, parseInt(price)];
-            console.log(cart);
         }
         update_cart(cart);
     });
