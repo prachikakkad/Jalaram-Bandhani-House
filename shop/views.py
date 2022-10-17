@@ -184,6 +184,8 @@ def Get_OTP(request):
     digits="0123456789"
     global list_digits
     list_digits = []
+    global otp_response
+    otp_response = list_digits
     OTP = ""
     for i in range(5):
         OTP += digits[math.floor(random.random()*10)]
@@ -277,8 +279,6 @@ def Payment_Proceed(request):
             return redirect('/verify')
     return HttpResponse('404 - Not Found')
 
-global otp_response
-otp_response = list_digits
 
 def Verifying(request):
     """Verifies The User Account And Sends QR Code To Them If Successfully Verified."""
