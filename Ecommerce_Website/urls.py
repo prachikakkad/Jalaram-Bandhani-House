@@ -41,7 +41,6 @@ urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('/favicon.ico'))),
     path('search' , views.Search, name="search"),
     path('review', views.review, name="review"),
-    path('getotp', views.Get_OTP, name="getotp"),
     path('paying-options', views.Paying_Options, name="paying-options"),
     path('paying-option-selected', views.Payment_Proceed, name="pay_proceed"),
     path('shop/', include('shop.urls'))
