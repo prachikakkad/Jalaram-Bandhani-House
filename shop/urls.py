@@ -14,7 +14,6 @@ urlpatterns = [
     path('logged-out', views.Log_Out, name="Log_Out"),
     path('signup', views.Signup, name="signup"),
     path('creating-account', views.Create_User,name="new_user"),
-    path('profile', views.Profile, name="Profile"),
     path('product-<int:myid>', views.Product_View, name="product_view"),
     path('checkout', views.Checkout , name="checkout"),
     path('place-order', views.Place_Order , name="place_order"),
