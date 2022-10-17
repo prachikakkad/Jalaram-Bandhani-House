@@ -277,6 +277,9 @@ def Payment_Proceed(request):
             return redirect('/verify')
     return HttpResponse('404 - Not Found')
 
+global otp_response
+otp_response = list_digits
+
 def Verifying(request):
     """Verifies The User Account And Sends QR Code To Them If Successfully Verified."""
     if request.method == 'POST':
@@ -286,7 +289,7 @@ def Verifying(request):
         txt4 = request.POST['txt4']
         txt5 = request.POST['txt5']
 
-        if txt1 == list_digits[0] and txt2 == list_digits[1] and txt3 == list_digits[2] and txt4 == list_digits[3] and txt5 == list_digits[4]:
+        if txt1 == otp_response[0] and txt2 == otp_response[1] and txt3 == otp_response[2] and txt4 == otp_response[3] and txt5 == otp_response[4]:
             messages.success(request, "Verification Successful !")
 
             sender = "jalarambandhanihouse@gmail.com"
