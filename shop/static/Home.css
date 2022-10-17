@@ -11,9 +11,25 @@ body {
 
 h2 {
     font-size: 33px;
+    margin-left: -70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .explore_btn {
+    display: block;
+    position: absolute;
+    transform: translate(20%, 0%);
+    text-decoration: none;
+    background-color: orange;
+    color: rgb(0, 47, 255);
+    cursor: pointer;
+    padding: 10px;
+    font-size: 33px;
+    margin-top: 0px;
+    margin-left: -100px;
+
+}
+.explore_btn1 {
     display: block;
     position: absolute;
     transform: translate(20%, 0%);
@@ -24,13 +40,30 @@ h2 {
     padding: 10px;
     font-size: 33px;
     margin-top: 0px;
-    margin-left: -42px;
+    margin-left: 50px;
+}
+.explore_btn2 {
+    display: block;
+    position: absolute;
+    transform: translate(20%, 0%);
+    text-decoration: none;
+    background-color: orange;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 33px;
+    margin-top: 0px;
+    margin-left: 150px;
 }
 
 .explore_btn:hover{
+    color: rgb(0, 47, 255);
+    text-decoration: none;
+}
+
+.explore_btn1:hover, .explore_btn2:hover{
     color: black;
-    padding-left: 18px;
-    padding-right: 18px;
+    text-decoration: none;
 }
 
 .image {
@@ -135,9 +168,31 @@ img {
         margin-top: 60px;
     }
 
-    .explore_btn {
-        margin-right: 71px;
-        margin-bottom: 42px;
+    h2{
+        margin-left: 0px;
+        font-size: 24px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .explore_btn{
+        margin-left: -300px;
+        margin-top: -30px;
+        font-size: 23px;
+    }
+    .explore_btn1{
+        margin-left: -80px;
+        margin-top: -30px;
+        font-size: 23px;
+    }
+    .explore_btn2{
+        margin-left: 150px;
+        margin-top: -30px;
+        font-size: 23px;
+    }
+    .special{
+        margin-left: -50px;
+        margin-top: -30px;
+        font-size: 23px;
     }
 
     .imgbx {
