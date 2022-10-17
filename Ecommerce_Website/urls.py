@@ -42,6 +42,7 @@ urlpatterns = [
     path('review', views.review, name="review"),
     path('paying-options', views.Paying_Options, name="paying-options"),
     path('paying-option-selected', views.Payment_Proceed, name="pay_proceed"),
+    path('reviews', views.Testimonials, name="Testimonials"),
     path('shop/', include('shop.urls'))
 ] 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
