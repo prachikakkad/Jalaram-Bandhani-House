@@ -174,28 +174,7 @@ def review(request):
         data = Review(User=user, Product=prod, Review=review_text, Rating=rating)
         data.save()
         return redirect(f'/shop/product-{prod_id}')
-
-def New_Order():
-    message = "New Order Has Been Placed !"
-    s = smtplib.SMTP('smtp.gmail.com', 587)
-    s.starttls()
-    s.login("jalarambandhanihouse@gmail.com", "pzcfghwqwdpdwqvl")
-    s.sendmail("", "thakkarmeena917@gmail.com", message)
-
-def Place_Order():
-    """Places The Order Successfully."""
-    global thank
-    thank = True
-
-    global items, email, fname, lname, username, address_1, address_2, state, city, zip_code, phone, items_json, amount
-
-    place_order = Order(Items=items, Email=email, First_name=fname, Last_name=lname, Username=username, Address_1=address_1, Address_2=address_2, State=state, City=city, Zip_Code=zip_code, Phone=phone, Json=items_json, Amount=amount)
-    place_order.save()
-    global id
-    id = place_order.order_id
-    update = Order_Update(Order_Id=place_order.order_id, Update="The Order Has Been Placed !")
-    update.save()
-
+    
 def Paying_Options(request):
     """Takes All The Details Of Place Order Form As Input."""
     if request.method == "POST":
@@ -236,6 +215,27 @@ def Paying_Options(request):
         return render(request, "Paying_Options.html")
     return HttpResponse( "404 Not Found !")
 
+def New_Order():
+    message = "New Order Has Been Placed !"
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+    s.starttls()
+    s.login("jalarambandhanihouse@gmail.com", "pzcfghwqwdpdwqvl")
+    s.sendmail("", "thakkarmeena917@gmail.com", message)
+
+def Place_Order():
+    """Places The Order Successfully."""
+    global thank
+    thank = True
+
+    # global items, email, fname, lname, username, address_1, address_2, state, city, zip_code, phone, items_json, amount
+
+    place_order = Order(Items=items, Email=email, First_name=fname, Last_name=lname, Username=username, Address_1=address_1, Address_2=address_2, State=state, City=city, Zip_Code=zip_code, Phone=phone, Json=items_json, Amount=amount)
+    place_order.save()
+    global id
+    id = place_order.order_id
+    update = Order_Update(Order_Id=place_order.order_id, Update="The Order Has Been Placed !")
+    update.save()
+
 def Payment_Proceed(request):
     """Takes Paying Option As Input."""
     if request.method == "POST":
@@ -274,50 +274,6 @@ def Payment_Proceed(request):
             return render(request , "Thank_You.html" , {'thank': thank, 'id': id, 'value' : string})
             
     return HttpResponse('404 - Not Found')
-
-
-def Verifying(request):
-    """Verifies The User Account And Sends QR Code To Them If Successfully Verified."""
-    if request.method == 'POST':
-        txt1 = request.POST['txt1']
-        txt2 = request.POST['txt2']
-        txt3 = request.POST['txt3']
-        txt4 = request.POST['txt4']
-        txt5 = request.POST['txt5']
-
-        if txt1 == otp_response[0] and txt2 == otp_response[1] and txt3 == otp_response[2] and txt4 == otp_response[3] and txt5 == otp_response[4]:
-            messages.success(request, "Verification Successful !")
-
-            sender = "jalarambandhanihouse@gmail.com"
-            emailid = request.user.email
-            
-            new_msg = EmailMessage()
-            new_msg['Subject'] = "Payment Info"
-            new_msg['From'] = sender
-            new_msg['To'] = emailid
-
-            msg = f"Option Chosen For Payment : {string}\nTotal Amount To Be Paid : {amount}\nPay According To The Payment Option Selected !\n If You have selected Pay In Advance, Pay The Amount : {amount}\n If You have selected Half in Advance And Half On Delivery, Pay The Amount : {amount/2}\n In Case Of Any Error or Mistake In The Amount Paid By You , The Owner Will Contact You !"
-            new_msg.set_content(msg)
-
-            with open('shop/qr_code.jpeg', 'rb') as f:
-                image_data = f.read()
-                image_type = imghdr.what(f.name)
-                image_name = f.name
-
-            s = smtplib.SMTP('smtp.gmail.com', 587)
-            s.starttls()
-            s.login(sender, "pzcfghwqwdpdwqvl")
-
-            new_msg.add_attachment(image_data, maintype='image', subtype=image_type, filename=image_name)
-
-            s.send_message(new_msg)
-            New_Order()
-            Place_Order()
-            return render(request , "Thank_You.html" , {'thank': thank, 'id': id, 'value' : string})
-        else:
-            messages.error(request, "Invalid Verification Code ! Try Again !")
-            
-    return HttpResponse("404 - Not Found !")
 
 def Thank_You(request):
     """Shows Thank You Page With Order Id To The User."""
