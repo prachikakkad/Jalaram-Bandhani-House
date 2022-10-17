@@ -16,7 +16,17 @@ import imghdr
 
 def Home(request):
     """Shows Home Page To The User."""
-    return render(request, "Home.html")
+    allProds=[]
+    catprods= Product.objects.values('Category', 'id')
+    cats= {item["Category"] for item in catprods}
+    for cat in cats:
+        prod=Product.objects.filter(Category=cat)
+        n = len(prod)
+        nSlides = n // 4 + ceil((n / 4) - (n // 4))
+        allProds.append([prod, range(1, nSlides), nSlides])
+
+    params={'allProds':allProds }
+    return render(request, "Home.html", params)
 
 def Contact(request):
     """Shows Contact Page To The User."""
