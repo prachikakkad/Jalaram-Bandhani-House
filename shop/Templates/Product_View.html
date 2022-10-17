@@ -94,6 +94,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 <script>
+    {% if user.is_authenticated %}
     function clearCart() {
         cart = JSON.parse(localStorage.getItem('cart'));
         for (var item in cart) {
@@ -172,5 +173,8 @@
     });
     $('#popcart').popover()
     update_popover(cart);
+    {% else %}
+    alert("Login To Add Items to Your Cart , Place Order , Post a Review And Contact The Owner !")
+    {% endif %}
 </script>
 {% endblock js %}
