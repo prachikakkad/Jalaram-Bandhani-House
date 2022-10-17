@@ -13,6 +13,7 @@ import imghdr
 
 # Create your views here.
 
+
 def Home(request):
     """Shows Home Page To The User."""
     return render(request, "Home.html")
