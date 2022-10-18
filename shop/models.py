@@ -8,7 +8,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Product(models.Model):
     Product_Id = models.AutoField
     Product_Name = models.CharField(max_length=50)
-    Category = models.CharField(max_length=23)
+    Category = models.CharField(max_length=50)
     Price = models.IntegerField()
     Description = models.TextField(max_length=1000)
     Publish_Date = models.DateField()
