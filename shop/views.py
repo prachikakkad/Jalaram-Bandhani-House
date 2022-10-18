@@ -264,7 +264,7 @@ def Payment_Proceed(request):
         new_msg['Subject'] = "Payment Info"
         new_msg['From'] = sender
         new_msg['To'] = emailid
-        msg = f"Option Chosen For Payment : {string}\nTotal Amount To Be Paid : {amount}\nPay According To The Payment Option Selected !\n If You have selected Pay In Advance, Pay The Amount : {amount}\n If You have selected Half in Advance And Half On Delivery, Pay The Amount : {amount/2}\n In Case Of Any Error or Mistake In The Amount Paid By You , The Owner Will Contact You !"
+        msg = f"Option Chosen For Payment : {string}\nTotal Amount To Be Paid : {amount}\nPay According To The Payment Option Selected !\n If You have selected Pay In Advance, Pay The Amount : {amount}\n If You have selected Cash On Delivery, You don't have to pay anything right now.\n In Case Of Any Error or Mistake In The Amount Paid By You , The Owner Will Contact You !"
         new_msg.set_content(msg)
 
         with open('shop/qr_code.jpeg', 'rb') as f:
