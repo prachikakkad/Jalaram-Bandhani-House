@@ -10,7 +10,7 @@ class Product(models.Model):
     Product_Name = models.CharField(max_length=50)
     Category = models.CharField(max_length=23)
     Price = models.IntegerField()
-    Description = models.TextField(max_length=300)
+    Description = models.TextField(max_length=1000)
     Publish_Date = models.DateField()
     Image = models.ImageField(upload_to="")
     Out_Of_Stock = "Out Of Stock"
