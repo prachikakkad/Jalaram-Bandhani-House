@@ -216,7 +216,7 @@ def Paying_Options(request):
         amount = request.POST.get('amount', '')
 
         amount = int(amount)
-        if state == "Maharashtra":
+        if state == "Maharashtra" or state == "maharashtra":
             messages.info(request, f"As you are from {state} , You will have to pay Rs. 60 as a delivery charge extra.")
             amount = amount + 60
         else:
